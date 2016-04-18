@@ -20,7 +20,7 @@ $excel.Visible = $true
 $workbook = $excel.Workbooks.Add()
 foreach($con in $connections){
     Write-Host "Введите пароль для сервера "$con
-    $log = Invoke-Command -ComputerName $con -ScriptBlock{Get-EventLog -LogName Security | Where-Object {($_.EventID -eq 4624) -and (($_.ReplacementStrings[8] -eq 2) -or ($_.ReplacementStrings[8] -eq 10)) -and ($_.TimeGenerated -ge $date)}} -Credential pasport.local\Administrator   
+    $log = Invoke-Command -ComputerName $con -ScriptBlock{Get-EventLog -LogName Security | Where-Object {($_.EventID -eq 4624) -and (($_.ReplacementStrings[8] -eq 2) -or ($_.ReplacementStrings[8] -eq 10)) -and ($_.TimeGenerated -ge "02/20/2016")}} -Credential pasport.local\Administrator   
     $sheet = $workbook.Worksheets.Add()
     $sheet.Name = $con
     $counter = 0
