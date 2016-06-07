@@ -41,7 +41,7 @@ foreach($con in $connections){
         $sheet.cells.Item($counter,4) = $_.timegenerated
     }
 }
-$filename = "D:\Security_"+$system+"_"+$date+".xlsx"
+$filename = "C:\Security_"+$system+"_"+$date+".xlsx"
 $excel.ActiveWorkbook.SaveAs($filename)
 $excel.Quit()
 Write-Host "Данные сохранены в файл C:\Security_"$system"_"$date".xlsx"
