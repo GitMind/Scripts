@@ -7,7 +7,7 @@ lsg=`ls /dev/ | grep vmnet`
 for count in $lsg
 do
 	#И меняем разрешение
-	echo gfhfyjbr86 | chmod a+wr /dev/$count
+	echo $1 | sudo chmod a+wr /dev/$count
 done
 echo "Permissions changed..."
 echo "Result:"
